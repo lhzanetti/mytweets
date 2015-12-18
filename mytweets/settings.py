@@ -63,10 +63,29 @@ DATABASES = {
     }
 }
 
+#static file directory inclusion
+STATICFILES_DIRS = (
+os.path.join(os.path.dirname(__file__),
+'static',
+),
+)
+
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR,  'templates'),
+)
+# List of callables that know how to import templates from varioussources.
+TEMPLATE_LOADERS = (
+'django.template.loaders.filesystem.Loader',
+'django.template.loaders.app_directories.Loader',
+# 'django.template.loaders.eggs.Loader',
+)
+
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pt-br'
 
 TIME_ZONE = 'UTC'
 
@@ -81,3 +100,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+
